@@ -11,9 +11,17 @@ window.onload = function() {
   let adj = ['great', 'big'];
   let noun = ['jogger', 'racoon'];
     //eligiendo elementos aleatoriamente
-  let rndm1 = pronoun[Math.floor(Math.random()*pronoun.length)];
-  let rndm2 = adj[Math.floor(Math.random()*adj.length)];
-  let rndm3 = noun[Math.floor(Math.random()*noun.length)] + ".com";
-  //enviando al HTML mediante id = excuse
-  document.querySelector("#domain").innerHTML = rndm1 + rndm2 + rndm3;
+  for (let i in pronoun){
+    var rndm1 = pronoun[i];
+  for (let j in adj){
+    var rndm2 = adj[j];
+  for (let k in noun){
+    let rndm3 = noun[k] + ".com";
+    //enviando al HTML mediante id = domain
+    let domain = document.createElement("h2");
+    domain.innerHTML = rndm1 + rndm2 + rndm3;
+    document.querySelector("div").appendChild(domain);
+  }
+  }
+  }
 };
